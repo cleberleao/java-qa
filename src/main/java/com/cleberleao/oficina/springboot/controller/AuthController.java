@@ -3,6 +3,7 @@ package com.cleberleao.oficina.springboot.controller;
 
 import com.cleberleao.oficina.springboot.dto.LoginDto;
 import com.cleberleao.oficina.springboot.dto.TokenDto;
+import com.cleberleao.oficina.springboot.dto.UserDto;
 import com.cleberleao.oficina.springboot.entity.User;
 import com.cleberleao.oficina.springboot.service.TokenService;
 import com.cleberleao.oficina.springboot.service.UserService;
@@ -46,7 +47,7 @@ public class AuthController {
 		}
 	}
 	@PostMapping("/user")
-	public ResponseEntity<?> criar(@RequestBody User dto){
+	public ResponseEntity<?> criar(@RequestBody UserDto dto){
 		return ResponseEntity.ok().body(service.criar(dto));
 	}
 }
