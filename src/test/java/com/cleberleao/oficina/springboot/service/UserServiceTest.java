@@ -9,6 +9,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -86,14 +87,14 @@ class UserServiceTest {
 
     @Test
     void testBuscarTodos() {
-//        List<User> users = List.of(new User(), new User());
-//
-//        when(repository.findAll()).thenReturn(users);
-//
-//        List<User> foundUsers = userService.buscarTodos();
-//
-//        assertNotNull(foundUsers);
-//        assertEquals(2, foundUsers.size());
-//        verify(repository, times(1)).findAll();
+        List<User> users = Arrays.asList(new User(), new User());
+
+        when(repository.findAll()).thenReturn(users);
+
+        List<User> foundUsers = userService.buscarTodos();
+
+        assertNotNull(foundUsers);
+        assertEquals(2, foundUsers.size());
+        verify(repository, times(1)).findAll();
     }
 }
